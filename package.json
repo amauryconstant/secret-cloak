@@ -11,6 +11,10 @@
         "secret-cloak",
         "secrets"
     ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/amauryconstant/secret-cloak"
+    },
     "license": "MIT",
     "files": [
         "dist",
