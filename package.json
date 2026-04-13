@@ -1,6 +1,6 @@
 {
     "name": "secret-cloak",
-    "version": "0.1.0",
+    "version": "0.1.4",
     "description": "OpenCode plugin: redact secrets/PII via gitleaks before LLM requests, restore locally after",
     "keywords": [
         "gitleaks",
