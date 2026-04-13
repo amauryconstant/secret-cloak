@@ -27,8 +27,7 @@
     "scripts": {
         "build": "tsdown",
         "dev": "tsdown --watch",
-        "test": "bun test",
-        "prepack": "bun test"
+        "test": "bun test"
     },
     "devDependencies": {
         "@types/bun": "^1.3.12",
