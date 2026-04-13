@@ -1,0 +1,41 @@
+[tools]
+bun = "1.3"
+gitleaks = "latest"
+oxlint = "latest"
+oxfmt = "latest"
+
+[tasks.build]
+description = "Build the project"
+sources = ["src/**/*", "tsdown.config.ts", "tsconfig.json"]
+outputs = ["dist/"]
+run = "bun x tsdown"
+
+[tasks.dev]
+description = "Watch mode for development"
+run = "bun x tsdown --watch"
+
+[tasks.typecheck]
+description = "Type check source files"
+run = "oxlint --type-aware --type-check src/**/*"
+
+[tasks.lint]
+description = "Auto-fix lint issues"
+run = "oxlint --fix"
+
+[tasks.format]
+description = "Format code"
+run = "oxfmt --write ."
+
+[tasks.test]
+description = "Run all tests"
+sources = ["src/**/*", "test/**/*"]
+run = "bun test"
+
+[tasks.verify]
+description = "Verify code quality"
+run = [
+    { task = "typecheck" },
+    { task = "lint" },
+    { task = "format" },
+    { task = "test" },
+]
